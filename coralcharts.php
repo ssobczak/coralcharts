@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: CoralCharts
- * Plugin URI:
+ * Plugin URI: https://github.com/ssobczak/coralcharts
  * Description: Add google charts to pages.
  * Version: 0.0.2
  * Author: Szymon Sobczak
@@ -22,10 +22,10 @@ function chatr_handler_func( $atts ) {
 
 add_shortcode( 'chart', 'chatr_handler_func' );
 
-function wptuts_scripts_with_jquery() {
+function coralcharts_enqueue() {
   	wp_register_script( 'tables', plugins_url( '/scripts/tables.js', __FILE__ ), array( 'jquery' ) );
   	wp_enqueue_script(  'tables' );
 
   	wp_enqueue_script('google-charts', '//www.gstatic.com/charts/loader.js');
 }
-add_action( 'wp_enqueue_scripts', 'wptuts_scripts_with_jquery' );
+add_action( 'wp_enqueue_scripts', 'coralcharts_enqueue' );

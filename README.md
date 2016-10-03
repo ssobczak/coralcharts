@@ -1,1 +1,2 @@
-# coralcharts
+# coralcharts.com
+Google Charts plugin.
