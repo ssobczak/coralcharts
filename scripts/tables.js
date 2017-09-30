@@ -19,9 +19,9 @@ function handleQueryResponse(response, element, params) {
     role: "annotation"
   }, ]);
   
-  var chart_container = $('<div class="chart-container"></div>')
-  $(element).append(chart_container);
-  $(element).append('<p class="chart-label">' + params['label'] + '</p>');
+  var chart_container = jQuery('<div class="chart-container"></div>')
+  jQuery(element).append(chart_container);
+  jQuery(element).append('<p class="chart-label">' + params['label'] + '</p>');
   
   var options = {
     title: data.getColumnLabel(0),
@@ -38,22 +38,22 @@ function handleQueryResponse(response, element, params) {
   chart.draw(view, options);
 }
 
-(function($) {
-  $(document).ready(function(){
-   if ($(".chart_div").length > 0){
+(function(jQuery) {
+  jQuery(document).ready(function(){
+   if (jQuery(".chart_div").length > 0){
  google.charts.load('current', {
       'packages': ['corechart']
     });
 
 
-  	$(".chart_div").each(function(){
+  	jQuery(".chart_div").each(function(){
       var container = this;
       google.charts.setOnLoadCallback(function() {
   	    fetchAndDraw({
-          'range': $(container).data('cells'),
-          'unit': $(container).data('unit'),
-          'color': $(container).data('bar-color'),
-          'label': $(container).data('label'),
+          'range': jQuery(container).data('cells'),
+          'unit': jQuery(container).data('unit'),
+          'color': jQuery(container).data('bar-color'),
+          'label': jQuery(container).data('label'),
         }, container);
       })
   	});
